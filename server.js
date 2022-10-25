@@ -73,8 +73,8 @@ app.post('/checkout',async (req,res,next)=>{
         quantity: item.quantity,
       })),
        mode: "payment",
-       success_url: "http://localhost:3000/success.html",
-       cancel_url: "http://localhost:3000/cancel.html",
+       success_url: "https://ecommerce-server16.herokuapp.com/success.html",
+       cancel_url: "https://ecommerce-server16.herokuapp.com/cancel.html",
     });
 
     res.status(200).json(session);
