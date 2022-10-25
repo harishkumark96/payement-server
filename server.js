@@ -1,7 +1,7 @@
 const express =  require('express');
 const cors = require('cors');
 const app = express();
-
+const PORT = process.env.PORT || 3000;
 require('dotenv').config()
 app.use(express.static("public"));
 app.use(express.urlencoded({extended:false}));
@@ -83,12 +83,12 @@ app.post('/checkout',async (req,res,next)=>{
 }
 })
 
-app.get('success',(req,res)=>{
-  res.render('success.html')
+app.get('/',(req,res)=>{
+  res.send('Ecommerce Backend Working perfectly')
 })
-app.listen(3000,()=>{
-  console.log(`server is connected to port 3000`)
-})
+
+app.listen(PORT, console.log(
+  `Server started on port ${PORT}`));
 
 
 
